@@ -7,7 +7,7 @@ src/serviceWorker.js
 /test.jsx
 react-app-env.d.ts
 /typings
-!.eslintrc.js
+.eslintrc.js
 echarts-dark-theme.*
 /public
 next.config.js

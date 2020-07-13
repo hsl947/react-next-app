@@ -9,6 +9,8 @@ module.exports = {
     project: './tsconfig.json'
   },
   rules: {
+    "semi": ['error', 'never'],
+    "@typescript-eslint/semi": ['error', 'never'],
     'import/no-extraneous-dependencies': 0,
     'import/extensions': 'off',
     'import/no-unresolved': 0,
