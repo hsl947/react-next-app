@@ -1,0 +1,5 @@
+{
+   "watch": ["assets", "pages", "next.config.js", "server.js"],
+   "ext": "js jsx ts tsx css less scss",
+   "ignore": [".next", ".git", ".vscode",  "node_modules"]
+}

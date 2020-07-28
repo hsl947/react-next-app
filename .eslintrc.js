@@ -31,6 +31,7 @@ module.exports = {
     'react/prefer-stateless-function': [0, { ignorePureComponents: true }],
     'jsx-a11y/no-static-element-interactions': 'off', // 关闭非交互元素加事件必须加 role
     'jsx-a11y/click-events-have-key-events': 'off', // 关闭click事件要求有对应键盘事件
+    'jsx-a11y/anchor-is-valid': 'off', // 关闭click事件要求有对应键盘事件
     'no-bitwise': 'off', // 不让用位操作符，不知道为啥，先关掉
     'react/jsx-indent': [2, 2],
     'react/jsx-no-undef': [2, { allowGlobals: true }],
@@ -50,13 +51,5 @@ module.exports = {
     ],
     'no-use-before-define': ['error', { functions: false }],
     'prettier/prettier': ['error', { parser: 'flow' }]
-  },
-  overrides: [
-    {
-      files: ['**/Mi/*.js', '**/Mi/*.jsx'],
-      rules: {
-        'react/prop-types': 'error' // Mi 文件夹下的是系统组件，必须写prop-types
-      }
-    }
-  ]
+  }
 }

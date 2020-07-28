@@ -44,8 +44,10 @@
     ]
   },
   "include": [
+    "assets",
     "pages",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "server.js"
   ],
   "exclude": [
     "node_modules",

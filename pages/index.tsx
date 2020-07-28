@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
+import axios from 'axios'
 import styles from './index.module.scss'
 
 export default function Home() {
+  useEffect(() => {
+    axios.get(
+      '/api/battle/index/dayQuantiy?gameType=lol&startTime=1595952000000&endTime=1596038400000&dateType=tomorrow',
+      { params: { a: 1 } }
+    )
+  }, [])
   return (
     <div className={styles.container}>
       <Head>
@@ -12,7 +20,10 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to{' '}
+          <Link href="/hello/123">
+            <a>Next.js!</a>
+          </Link>
         </h1>
 
         <p className={styles.description}>
