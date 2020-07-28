@@ -4,7 +4,8 @@ import Link from 'next/link'
 import axios from 'axios'
 import styles from './index.module.scss'
 
-export default function Home() {
+export default function Home({ data }) {
+  console.log('data: ', data)
   useEffect(() => {
     axios.get(
       '/api/battle/index/dayQuantiy?gameType=lol&startTime=1595952000000&endTime=1596038400000&dateType=tomorrow',
@@ -74,4 +75,11 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+Home.getInitialProps = async ({ req }: any) => {
+  const { data } = await axios.get(
+    `http://${req.headers.host}/api/battle/index/dayQuantiy?gameType=lol&startTime=1595952000000&endTime=1596038400000&dateType=tomorrow`
+  )
+  return { data }
 }
