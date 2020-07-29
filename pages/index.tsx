@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { NextPage } from 'next'
+import { NextPage, InferGetStaticPropsType } from 'next'
 import Link from 'next/link'
 import axios from '@/assets/js/axios'
 import styles from './index.module.scss'
@@ -8,7 +8,18 @@ interface Props {
   data: Record<any, any>;
 }
 
-const Home: NextPage<Props> = ({ data }) => {
+export const getStaticProps = async () => {
+  const data: Props = await axios.get(
+    '/api/battle/index/dayQuantiy?gameType=lol&startTime=1595952000000&endTime=1596038400000&dateType=tomorrow'
+  )
+  return {
+    props: {
+      data
+    }
+  }
+}
+
+const Home = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
   useEffect(() => {
     axios.get(
       '/api/battle/index/dayQuantiy?gameType=lol&startTime=1595952000000&endTime=1596038400000&dateType=tomorrow'
@@ -28,13 +39,6 @@ const Home: NextPage<Props> = ({ data }) => {
       </main>
     </div>
   )
-}
-
-Home.getInitialProps = async () => {
-  const data = await axios.get(
-    '/api/battle/index/dayQuantiy?gameType=lol&startTime=1595952000000&endTime=1596038400000&dateType=tomorrow'
-  )
-  return { data }
 }
 
 export default Home
