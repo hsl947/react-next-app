@@ -5,36 +5,37 @@ interface AxiosConfig {
   headers: {
     'Content-Type': string
   };
+  baseURL?: string;
 }
 
-const config: AxiosConfig = {
+const initConfig = {
   timeout: 600000,
   headers: {
     'Content-Type': 'application/json'
   }
 }
 
-const axios = Axios.create(config)
+const { PORT } = process.env
+const urlConfig = process.browser ? {} : { baseURL: `http://localhost:${PORT}` }
+const allConfig: AxiosConfig = { ...initConfig, ...urlConfig }
+
+const axios = Axios.create(allConfig)
 
 // 请求前拦截
 axios.interceptors.request.use(
   (req) => {
-    req.headers.token = undefined
+    req.headers.token = null
     return req
   },
-  (err) => {
-    return Promise.reject(err)
-  }
+  (err) => Promise.reject(err)
 )
 
 // 返回后拦截
 axios.interceptors.response.use(
-  ({ data }): any => {
+  ({ data }) => {
     return Promise.resolve(data)
   },
-  (err) => {
-    return Promise.reject(err)
-  }
+  (err) => Promise.reject(err)
 )
 
 export default axios

@@ -1,11 +1,13 @@
 // import App from 'next/app'
 import React from 'react'
+import { NextPage } from 'next'
+import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import '@/assets/css/global.scss'
 import '@/assets/js/flexible'
 
 // 自定义 App入口组件
-const App = ({ Component, pageProps }) => {
+const App: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>

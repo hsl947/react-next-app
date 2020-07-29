@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { NextPage } from 'next'
 
-export default function HelloId() {
+const HelloId: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
   if (process.browser) {
@@ -10,5 +11,7 @@ export default function HelloId() {
   useEffect(() => {
     // console.log(1, window)
   }, [])
-  return `当前 id -- ${id}`
+  return <h5>当前 id -- {id}</h5>
 }
+
+export default HelloId

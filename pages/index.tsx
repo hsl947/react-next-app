@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react'
+import { NextPage } from 'next'
 import Link from 'next/link'
-import axios from 'axios'
+import axios from '@/assets/js/axios'
 import styles from './index.module.scss'
 
-export default function Home() {
+interface Props {
+  data: Record<any, any>;
+}
+
+const Home: NextPage<Props> = ({ data }) => {
   useEffect(() => {
     axios.get(
       '/api/battle/index/dayQuantiy?gameType=lol&startTime=1595952000000&endTime=1596038400000&dateType=tomorrow'
@@ -19,14 +24,17 @@ export default function Home() {
             <a>Next.js!</a>
           </Link>
         </h1>
+        <h2 className={styles.subTitle}>{JSON.stringify(data)}</h2>
       </main>
     </div>
   )
 }
 
-Home.getInitialProps = async ({ req }: any) => {
-  const { data } = await axios.get(
-    `http://${req.headers.host}/api/battle/index/dayQuantiy?gameType=lol&startTime=1595952000000&endTime=1596038400000&dateType=tomorrow`
+Home.getInitialProps = async () => {
+  const data = await axios.get(
+    '/api/battle/index/dayQuantiy?gameType=lol&startTime=1595952000000&endTime=1596038400000&dateType=tomorrow'
   )
   return { data }
 }
+
+export default Home

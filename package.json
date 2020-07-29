@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "cross-env PORT=3033 nodemon server.js",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production node server.js"
+    "start": "cross-env PORT=3033 NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^3.5.0",
