@@ -2,5 +2,8 @@ const path = require('path')
 
 module.exports = {
   /* config options here */
-  compress: true
+  compress: true,
+  postcssLoaderOptions: {
+    config: {}
+  }
 }
