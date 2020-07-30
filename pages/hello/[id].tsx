@@ -2,7 +2,13 @@ import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { NextPage } from 'next'
 
-const HelloId: NextPage = () => {
+import { connect } from 'react-redux'
+
+interface Props {
+  storeData?: Record<any, any>;
+}
+
+const HelloId: NextPage<Props> = (props) => {
   const router = useRouter()
   const { id } = router.query
   if (process.browser) {
@@ -14,4 +20,4 @@ const HelloId: NextPage = () => {
   return <h5>当前 id -- {id}</h5>
 }
 
-export default HelloId
+export default connect((state) => state, {})(HelloId)
