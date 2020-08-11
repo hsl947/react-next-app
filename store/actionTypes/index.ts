@@ -7,5 +7,9 @@ export default {
   SET_USERINFO: {
     name: 'SET_USERINFO',
     field: 'userInfo'
+  },
+  SET_ACTIVEINDEX: {
+    name: 'SET_ACTIVEINDEX',
+    field: 'activeIndex'
   }
 }

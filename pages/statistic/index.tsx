@@ -7,7 +7,7 @@ interface Props {}
 const Home: NextPage<Props> = () => <div />
 
 Home.getInitialProps = async (ctx: NextPageContext) => {
-  redirect(ctx, '/news')
+  redirect(ctx, '/hello/123/456')
   return {}
 }
 

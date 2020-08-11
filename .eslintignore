@@ -14,3 +14,5 @@ next.config.js
 next-env.d.ts
 postcss.config.js
 flexible.js
+next-less.config.js
+fastclick.js

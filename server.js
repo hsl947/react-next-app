@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const express = require('express')
+const cookieParser = require('cookie-parser')
 const next = require('next')
 const { createProxyMiddleware } = require('http-proxy-middleware')
 
@@ -25,11 +26,20 @@ app
   .then(() => {
     const server = express()
 
+    server.use(cookieParser())
+
     if (devProxy) {
       Object.keys(devProxy).forEach((context) => {
         server.use(context, createProxyMiddleware(devProxy[context]))
       })
     }
+
+    server.all('/api', (req, res) => {
+      res.writeHead(200, {
+        'Set-Cookie': 'myCookie=test'
+      })
+      handle(req, res)
+    })
 
     server.all('*', (req, res) => {
       handle(req, res)

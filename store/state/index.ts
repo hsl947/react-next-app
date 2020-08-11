@@ -3,6 +3,7 @@ interface StoreState {
     userName: string,
     token: string
   };
+  activeIndex: number;
 }
 
 const initState: StoreState = {
@@ -10,7 +11,8 @@ const initState: StoreState = {
   userInfo: {
     userName: '',
     token: ''
-  }
+  },
+  activeIndex: 3
 }
 
 export default initState

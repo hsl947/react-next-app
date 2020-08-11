@@ -12,7 +12,8 @@ module.exports = {
       unitPrecision: 5,
       mediaQuery: false,
       minPixelValue: 0,
-      propList: ["*"]
+      propList: ["*"],
+      exclude: RegExp(/node_modules/i)
     }
   }
 }

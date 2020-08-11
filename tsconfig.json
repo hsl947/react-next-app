@@ -12,6 +12,7 @@
       "@/assets/*": ["assets/*"],
       "@/utils/*": ["utils/*"],
       "@/store/*": ["store/*"],
+      "@/api/*": ["api/*"],
     },
     "allowJs": true,
     "skipLibCheck": true,
@@ -49,7 +50,10 @@
     "pages",
     "next-env.d.ts",
     "server.js",
-    "store/"
+    "store/",
+    "components/",
+    "utils/",
+    "api/"
   ],
   "exclude": [
     "node_modules",

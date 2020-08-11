@@ -1,0 +1,251 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: #f5f7f9;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif; */
+  font-family: -apple-system-font,"Helvetica Neue",sans-serif;
+  -webkit-tap-hightlight-color: transparent;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  font-weight: normal;
+  line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  line-height: 1;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+ol,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none
+}
+
+img {
+  border: 0;
+  vertical-align: middle
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-hightlight-color: transparent;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+textarea,
+button {
+  -webkit-appearance: none;
+  border: none;
+}
+
+/* 滚动条 */
+
+/*滚动条宽度*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* 轨道样式 */
+::-webkit-scrollbar-track {}
+
+/* Handle样式 */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+
+/*当前窗口未激活的情况下*/
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/*hover到滚动条上*/
+::-webkit-scrollbar-thumb:vertical:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/*滚动条按下*/
+::-webkit-scrollbar-thumb:vertical:active {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition-delay: 99999999s;
+  -webkit-transition: color 99999999s ease-out, background-color 99999999s ease-out;
+  transition-delay: 99999999s;
+  transition: color 99999999s ease-out, background-color 99999999s ease-out;
+}
+
+.iconfont.lol {
+  color: #009BF5;
+}
+.iconfont.dota {
+  color: #ED5758;
+}
+.iconfont.ow {
+  color: #F4B544;
+}
+.iconfont.csgo {
+  color: #5f4d98;
+}
+.iconfont.kog {
+  color: #F4B544;
+}

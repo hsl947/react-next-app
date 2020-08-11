@@ -3,6 +3,7 @@ module.exports = {
     'eslint:all',
     'airbnb',
     'airbnb-typescript',
+    "plugin:react-hooks/recommended",
     'plugin:prettier/recommended' // prettier配置
   ],
   parserOptions: {
@@ -24,6 +25,8 @@ module.exports = {
         ignoreClassFields: false
       }
     ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     'react/jsx-one-expression-per-line': 'off', // 关闭要求一个表达式必须换行的要求，和Prettier冲突了
     'react/jsx-wrap-multilines': 0, // 关闭要求jsx属性中写jsx必须要加括号，和Prettier冲突了
     'comma-dangle': ['error', 'never'],
@@ -32,6 +35,8 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 'off', // 关闭非交互元素加事件必须加 role
     'jsx-a11y/click-events-have-key-events': 'off', // 关闭click事件要求有对应键盘事件
     'jsx-a11y/anchor-is-valid': 'off', // 关闭click事件要求有对应键盘事件
+    'jsx-a11y/label-has-associated-control': 'off', // 关闭click事件要求有对应键盘事件
+    'jsx-a11y/no-noninteractive-element-interactions': 'off', // 关闭click事件要求有对应键盘事件
     'no-bitwise': 'off', // 不让用位操作符，不知道为啥，先关掉
     'react/jsx-indent': [2, 2],
     'react/jsx-no-undef': [2, { allowGlobals: true }],

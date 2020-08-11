@@ -4,11 +4,9 @@ import { NextPage } from 'next'
 
 import { connect } from 'react-redux'
 
-interface Props {
-  storeData?: Record<any, any>;
-}
+interface Props extends ReduxProps {}
 
-const HelloId: NextPage<Props> = (props) => {
+const HelloId: NextPage<Props> = () => {
   const router = useRouter()
   const { id } = router.query
   if (process.browser) {
@@ -17,7 +15,11 @@ const HelloId: NextPage<Props> = (props) => {
   useEffect(() => {
     // console.log(1, window)
   }, [])
-  return <h5>当前 id -- {id}</h5>
+  return (
+    <>
+      <h5>当前 id -- {JSON.stringify(id)}</h5>
+    </>
+  )
 }
 
 export default connect((state) => state, {})(HelloId)
