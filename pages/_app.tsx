@@ -1,4 +1,4 @@
-import App from 'next/app'
+// import App from 'next/app'
 import React, { useEffect, useState, useCallback } from 'react'
 import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
@@ -6,7 +6,6 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { TAB_LIST } from '@/assets/js/types'
 import TabBar from '@/components/common/tabBar'
-import cookies from 'next-cookies'
 import { Provider as ReduxProvider } from 'react-redux'
 import store from '@/store/index'
 
@@ -98,15 +97,6 @@ const MyApp: NextPage<Props> = ({ Component, pageProps }) => {
       {showTabbar() && <TabBar acticeIndex={activeIndex} />}
     </ReduxProvider>
   )
-}
-
-MyApp.getInitialProps = async (context: any) => {
-  const { ctx } = context
-  const getCookies = cookies(ctx)
-  process.env.SN_TOKEN = getCookies.SN_token
-  // ctx.res.cookie('SN_token', 'asdasd1321fsf')
-  const appProps: any = await App.getInitialProps(context)
-  return { ...appProps }
 }
 
 export default MyApp
