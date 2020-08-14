@@ -3,7 +3,8 @@ import React, { useEffect, useState, useCallback } from 'react'
 import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
+import Router, { useRouter } from 'next/router'
+import { Toast } from 'antd-mobile'
 import { TAB_LIST } from '@/assets/js/types'
 import TabBar from '@/components/common/tabBar'
 import { Provider as ReduxProvider } from 'react-redux'
@@ -46,9 +47,29 @@ const MyApp: NextPage<Props> = ({ Component, pageProps }) => {
     }
   }
 
+  // 路由钩子,全局拦截路由
+  const initRouterHook = () => {
+    const events = [
+      'routeChangeStart',
+      'routeChangeComplete',
+      'routeChnageError',
+      'beforeHistoryChange',
+      'hashChangeStart',
+      'hashChangeComplete'
+    ]
+    // 通过forEach遍历 绑定钩子事件
+    events.forEach((event) => {
+      Router.events.on(event, () => {})
+    })
+    Router.events.on('routeChangeStart', () => {
+      Toast.loading('加载中')
+    })
+  }
+
   useEffect(() => {
     promiseFallback()
     initStore()
+    initRouterHook()
   }, [initStore])
 
   // 是否展示底部 tabbar
